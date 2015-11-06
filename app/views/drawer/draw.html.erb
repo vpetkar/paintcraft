@@ -1,6 +1,13 @@
-<h1>PaintCraft</h1>
+<% content_for :customjs do %>
+  <script type="text/javascript">
+    $("#colorPicker").spectrum({
+      color: "#f00"
+    });
+  </script>
+<% end %>
+<%= image_tag "paintcraft.png" %>
 <p>Please select your color on the left and set it to paint the squares<p>
-  
+<input type="text" id="colorPicker"/>
 <table id="drawTable">
     <% @pixels.each do |x| %>
       <tr>
@@ -10,3 +17,4 @@
       </tr>
     <% end %>
 </table>
+<button> Export to Minecraft! </button>
