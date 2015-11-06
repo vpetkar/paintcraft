@@ -5,18 +5,21 @@
       color: "#f00"
     });
   // Custom painting library
-    var oldColor;
-    var colorPicked = $("#colorPicker").spectrum("get");
-    var trigger;
+    var colorPicked;
+    var trigger = false;
+    function getColor() {
+      colorPicked = $("#colorPicker").spectrum("get");
+      return colorPicked.toHexString();
+    }
     $(".cell").on({
       mouseover: function () {
         if(trigger) {
-          $(this).attr("style", "background-color:" + colorPicked.toHexString());
+          $(this).attr("style", "background-color:" + getColor());
         }
       },
       mouseleave: function () {
         if(trigger) {
-          $(this).attr("style", "background-color:" + colorPicked.toHexString());
+          $(this).attr("style", "background-color:" + getColor());
         }
       },
       click: function () {
