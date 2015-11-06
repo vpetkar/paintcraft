@@ -1,7 +1,27 @@
 <% content_for :customjs do %>
   <script type="text/javascript">
+  // Initialize the colorPicker for this page
     $("#colorPicker").spectrum({
       color: "#f00"
+    });
+  // Custom painting library
+    var oldColor;
+    var colorPicked = $("#colorPicker").spectrum("get");
+    var trigger;
+    $(".cell").on({
+      mouseover: function () {
+        if(trigger) {
+          $(this).attr("style", "background-color:" + colorPicked.toHexString());
+        }
+      },
+      mouseleave: function () {
+        if(trigger) {
+          $(this).attr("style", "background-color:" + colorPicked.toHexString());
+        }
+      },
+      click: function () {
+        trigger = !trigger;
+      }
     });
   </script>
 <% end %>
@@ -12,7 +32,7 @@
     <% @pixels.each do |x| %>
       <tr>
         <% x.each do |y| %>
-          <td style="background-color:#<%= y %>;"></td>
+          <td class="cell" style="background-color:#<%= y %>;"></td>
         <% end %>
       </tr>
     <% end %>
