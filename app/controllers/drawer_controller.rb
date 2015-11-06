@@ -1,11 +1,18 @@
 class DrawerController < ApplicationController
-  def draw
-    @pixels = Hash.new("FFFFFF")
-    for i in 0..16
-      for j in 0..16
-        setColor(i, j, "FFFFFF")
+  def setColor(location, code)
+    @pixels[location] = code
   end
-  def setColor(x, y, code)
-    @pixels[[x,y]] = code
+  def draw
+    @pixels = Array.new(16) {
+      Array.new(16) {
+        "FFFFFF"
+      }
+    }
+  end
+  def printPixels
+    @pixels.each {
+      |k, v|
+      puts "#{k} on #{v}"
+    }
   end
 end

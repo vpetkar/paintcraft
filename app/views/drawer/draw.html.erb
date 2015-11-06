@@ -1,2 +1,10 @@
 <h1>Drawer#draw</h1>
-<p>Find me in app/views/drawer/draw.html.erb</p>
+<table id="drawTable">
+    <% @pixels.each do |x| %>
+      <tr>
+        <% x.each do |y| %>
+          <td style="background-color:#<%= y %>;"></td>
+        <% end %>
+      </tr>
+    <% end %>
+</table>
