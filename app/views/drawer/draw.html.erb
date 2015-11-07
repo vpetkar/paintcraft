@@ -21,7 +21,9 @@
         if(trigger) {
           $(this).attr("style", "background-color:" + getColor());
           var pixel = {
-            color: getColor()
+            color: getColor(),
+            x: $(this).attr("data-x"),
+            y: $(this).attr("data-y")
           }
           $.ajax({
             type: "POST",
@@ -43,10 +45,10 @@
 <p>Please select your color on the left and set it to paint the squares<p>
 <input type="text" id="colorPicker"/>
 <table id="drawTable">
-    <% @pixels.each do |x| %>
+    <% (0..16).each do |x|%>
       <tr>
-        <% x.each do |y| %>
-          <td class="cell" style="background-color:#<%= y %>;"></td>
+        <% (0..16).each do |y| %>
+          <td class="cell" data-x="<%= x %>" data-y="<%= y %>" style="background-color:#<%= @pixels[x,y] %>;"></td>
         <% end %>
       </tr>
     <% end %>
