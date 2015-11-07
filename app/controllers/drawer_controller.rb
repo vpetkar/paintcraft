@@ -9,6 +9,14 @@ class DrawerController < ApplicationController
       }
     }
   end
+  def store
+    puts params
+    respond_to do |format|
+      format.json {
+        render json: {color: "TEST"}
+      }
+    end
+  end
   def printPixels
     @pixels.each {
       |k, v|

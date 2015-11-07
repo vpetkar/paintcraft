@@ -20,6 +20,17 @@
       mouseleave: function () {
         if(trigger) {
           $(this).attr("style", "background-color:" + getColor());
+          var pixel = {
+            color: getColor()
+          }
+          $.ajax({
+            type: "POST",
+            url: '/drawer/store',
+            data: pixel,
+            success: function () {
+            },
+            dataType: "json"
+          });
         }
       },
       click: function () {
