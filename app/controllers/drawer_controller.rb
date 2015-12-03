@@ -1,28 +1,19 @@
 class DrawerController < ApplicationController
-  @@pixels
-  def setColor(location, code)
-    @@pixels[location] = code
-  end
   def draw
-    @@pixels = Array.new(16) {
-      Array.new(16) {
-        "FFFFFF"
-      }
-    }
-    @pixels = @@pixels
+    reset_session
+    for x in 0..16
+      for y in 0..16
+        PaintPixel.create(session: session.id, x: x, y: y, color:"#FFFFFF" );
+      end
+    end
   end
   def store
     respond_to do |format|
       format.json {
-        @@pixels[params[:x].to_i][params[:y].to_i] = params[:color]
+        paintpixel = PaintPixel.find_by(session: session.id, x: params[:x].to_i, y: params[:y].to_i)
+        paintpixel.update(color: params[:color])
         render json: {color: "TEST"}
       }
     end
-  end
-  def printPixels
-    @@pixels.each {
-      |k, v|
-      puts "#{k} on #{v}"
-    }
   end
 end

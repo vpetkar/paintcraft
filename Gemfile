@@ -47,4 +47,4 @@ end
 
 
 # Paintcraft
-gem 'imageruby'
+gem 'rmagick'

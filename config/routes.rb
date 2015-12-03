@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  root 'drawer#draw'
   get 'drawer/draw'
+  post 'output/png', to: "output#generatePNG"
   post 'drawer/store', to: 'drawer#store'
   get 'drawer/generate'
   # The priority is based upon order of creation: first created -> highest priority.

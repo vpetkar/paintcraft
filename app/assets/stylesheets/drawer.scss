@@ -2,7 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-
+img {
+  image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges;          /* Firefox                        */
+  image-rendering: -o-crisp-edges;            /* Opera                          */
+  image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+  image-rendering: pixelated; /* Chrome */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
 body {
   width:100%;
   height:100%;
@@ -31,7 +39,7 @@ img {
   vertical-align:middle;
   width: 100%;
   background-color: #7eb2e4;
-  height: 150px;
+  height: 125px;
 }
 #content {
   text-align:center;
@@ -47,28 +55,29 @@ img {
 
 // Buttons
 .btn {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 12;
-  -moz-border-radius: 12;
-  border-radius: 12px;
+  background: #ededed;
+  background-image: -webkit-linear-gradient(top, #ededed, #d6d6d6);
+  background-image: -moz-linear-gradient(top, #ededed, #d6d6d6);
+  background-image: -ms-linear-gradient(top, #ededed, #d6d6d6);
+  background-image: -o-linear-gradient(top, #ededed, #d6d6d6);
+  background-image: linear-gradient(to bottom, #ededed, #d6d6d6);
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
   font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  color: #0f0f0f;
+  font-size: 16px;
+  padding: 5px 10px 5px 10px;
+  border: solid #bdbdbd 1px;
   text-decoration: none;
 }
 
 .btn:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background: #c7c7c7;
+  background-image: -webkit-linear-gradient(top, #c7c7c7, #b3b3b3);
+  background-image: -moz-linear-gradient(top, #c7c7c7, #b3b3b3);
+  background-image: -ms-linear-gradient(top, #c7c7c7, #b3b3b3);
+  background-image: -o-linear-gradient(top, #c7c7c7, #b3b3b3);
+  background-image: linear-gradient(to bottom, #c7c7c7, #b3b3b3);
   text-decoration: none;
 }

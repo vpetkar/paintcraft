@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  session: MyString
+  x: MyString
+  'y': MyString
+  color: MyString
+
+two:
+  session: MyString
+  x: MyString
+  'y': MyString
+  color: MyString

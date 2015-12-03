@@ -51,10 +51,11 @@
       <% (0..16).each do |x|%>
         <tr>
           <% (0..16).each do |y| %>
-            <td class="cell" data-x="<%= x %>" data-y="<%= y %>" style="background-color:#<%= @pixels[x,y] %>;"></td>
+            <td class="cell" data-x="<%= x %>" data-y="<%= y %>" style="background-color:#ffffff;"></td>
           <% end %>
         </tr>
       <% end %>
   </table>
-  <button class="btn"> Export to Minecraft! </button>
+  <br>
+  <%= button_to 'Output to PNG', output_png_path, method: :generatePNG %>
 </div>
