@@ -3,7 +3,7 @@ class DrawerController < ApplicationController
     reset_session
     for x in 0..16
       for y in 0..16
-        PaintPixel.create(session: session.id, x: x, y: y, color:"#FFFFFF" );
+        PaintPixel.create(session: session.id, x: x, y: y, color:"Transparent" );
       end
     end
   end
