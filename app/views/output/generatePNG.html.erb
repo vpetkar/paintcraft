@@ -4,8 +4,8 @@ hi
   <%= image_tag "paintcraft.png" %>
 </div>
 <div id="content">
-  <p>Please select your color on the left and set it to paint the squares<p>
-  <input type="text" id="colorPicker"/>
+  <p>Here's your image!<p>
   <img src="/drawing/<%= session.id %>.png"/>
+  <a href="/drawing/<%= session.id %>.png" download="mydrawing.png"> Download now!</a>
 </div>
 </html>
