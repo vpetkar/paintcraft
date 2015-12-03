@@ -7,5 +7,10 @@ This project was started from the Product Development and Management for Enginee
 
 All code is open source, and freely available to the public under the Apache 2.0 License. 
 
-Dependencies
-` rails: 4.00 <` 
+How to launch:
+`bundle install`
+`rake db:migrate`
+`rails server`
+
+Depedencies
+Please ensure you have a working varient of ImageMagick, Rails 4.2+, Ruby 2.2+, and SQLite.
